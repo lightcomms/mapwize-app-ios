@@ -1,0 +1,2 @@
+"NSLocationWhenInUseUsageDescription" = "Mapwize a besoin de votre autorisation pour afficher votre position sur la carte.";
+"NSCameraUsageDescription" = "Mapwize a besoin d'accéder à votre appareil photo afin de scanner des QR-codes.";
