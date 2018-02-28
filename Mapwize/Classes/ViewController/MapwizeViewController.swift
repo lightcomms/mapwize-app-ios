@@ -6,6 +6,7 @@ import Mapbox
 import Kingfisher
 import SystemConfiguration
 
+
 enum SearchMode {
     case none
     case defaultSearch
@@ -65,7 +66,7 @@ class MapwizeViewController: UIViewController  {
     
     var directionMemory:(venueId:String, from:MWZDirectionPoint, to:MWZDirectionPoint, direction:MWZDirection)?
     
-    var locationProvider:MapwizeLocationProvider!
+    var locationProvider:LVLCIndoorLocationProvider!
     
     var defaultBottomMargin:CGFloat = 0.0
     var defaultTopMargin:CGFloat = 0.0
@@ -781,6 +782,7 @@ class MapwizeViewController: UIViewController  {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "qrcodescanner" {
+            locationProvider.stop()
             let target = segue.destination as? QrCodeScannerViewController
             target?.delegate = self
         }
@@ -889,7 +891,7 @@ extension MapwizeViewController: QrCodeScannerDelegate {
         }
         else {
             if object.indoorLocation != nil {
-                self.locationProvider.defineLocation(location: object.indoorLocation)
+                self.locationProvider.define(object.indoorLocation)
             }
             
             if object.universe != nil {
@@ -1079,7 +1081,7 @@ extension MapwizeViewController: UITableViewDelegate {
 // MARK: - Mapwize delegate
 extension MapwizeViewController: MWZMapwizePluginDelegate {
     func mapwizePluginDidLoad(_ mapwizePlugin: MapwizePlugin!) {
-        locationProvider = MapwizeLocationProvider()
+        locationProvider = LVLCIndoorLocationProvider()
         self.mapwizePlugin.setIndoorLocationProvider(locationProvider)
         self.mapwizePlugin.setPreferredLanguage(Locale.preferredLanguages[0])
     }

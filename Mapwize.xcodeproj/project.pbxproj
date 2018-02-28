@@ -26,6 +26,9 @@
 		47A11A211F84E1AE00B35B34 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479F5E011F7FDFAF00C021A3 /* ionicons.ttf */; };
 		47A44CC21F8501AE0062D187 /* RouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A44CC01F84E6060062D187 /* RouteView.xib */; };
 		47A44CC31F8501B50062D187 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A44CC11F84E6060062D187 /* RouteView.swift */; };
+		8647429B20455AF300B068AD /* LVLCIndoorLocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8647429920455AF300B068AD /* LVLCIndoorLocationProvider.m */; };
+		86F29DBA204559BB00A4EC4A /* libvlc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F29DB9204559BB00A4EC4A /* libvlc.framework */; };
+		86F29DBB204559BB00A4EC4A /* libvlc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86F29DB9204559BB00A4EC4A /* libvlc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F0A2E8E1FBECE7A004B47A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A2E901FBECE7A004B47A1 /* Localizable.strings */; };
 		8F0A2E961FBEDA9E004B47A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A2E981FBEDA9E004B47A1 /* InfoPlist.strings */; };
 		8F15B40A1FB4781C00E09239 /* PlaceWithSubtitleSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15B4091FB4781C00E09239 /* PlaceWithSubtitleSearchBarCell.swift */; };
@@ -44,6 +47,20 @@
 		8FF5CD171FB3115400B68A92 /* PlaceSearchBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FF5CD161FB3115400B68A92 /* PlaceSearchBarCell.xib */; };
 		BFD490F3DC0F6FCC82CC90BA /* Pods_Mapwize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1615CC6DDBCA1FE282233B16 /* Pods_Mapwize.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86F29DBC204559BB00A4EC4A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				86F29DBB204559BB00A4EC4A /* libvlc.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0BB4FA560678D71764EE7B19 /* Pods-Mapwize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapwize.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mapwize/Pods-Mapwize.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +89,9 @@
 		4ABEA29C6B11AA8E20AA76DD /* Pods-Mapwize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapwize.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mapwize/Pods-Mapwize.debug.xcconfig"; sourceTree = "<group>"; };
 		532961871BE2CA3D22506735 /* Pods-MapWize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapWize.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapWize/Pods-MapWize.debug.xcconfig"; sourceTree = "<group>"; };
 		59F399EC05A7FEB198B44636 /* Pods-MapWize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapWize.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapWize/Pods-MapWize.release.xcconfig"; sourceTree = "<group>"; };
+		8647429920455AF300B068AD /* LVLCIndoorLocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVLCIndoorLocationProvider.m; sourceTree = "<group>"; };
+		8647429A20455AF300B068AD /* LVLCIndoorLocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVLCIndoorLocationProvider.h; sourceTree = "<group>"; };
+		86F29DB9204559BB00A4EC4A /* libvlc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libvlc.framework; sourceTree = "<group>"; };
 		8F0A2E911FBECEC1004B47A1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F0A2E921FBED759004B47A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F0A2E931FBED789004B47A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -104,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F29DBA204559BB00A4EC4A /* libvlc.framework in Frameworks */,
 				BFD490F3DC0F6FCC82CC90BA /* Pods_Mapwize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +291,7 @@
 		47D994371F7D35F800E14A6B = {
 			isa = PBXGroup;
 			children = (
+				86F29DB9204559BB00A4EC4A /* libvlc.framework */,
 				47D994421F7D35F800E14A6B /* Mapwize */,
 				47D994411F7D35F800E14A6B /* Products */,
 				47AA6FAEDCE114E918314D9B /* Pods */,
@@ -299,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				8F5E91101FC5B7040098B161 /* MapwizeLocationProvider.swift */,
+				8647429A20455AF300B068AD /* LVLCIndoorLocationProvider.h */,
+				8647429920455AF300B068AD /* LVLCIndoorLocationProvider.m */,
 			);
 			path = LocationProvider;
 			sourceTree = "<group>";
@@ -326,6 +350,7 @@
 				E9B39663319DAE81604DFDEE /* [CP] Embed Pods Frameworks */,
 				7043FAAF1B4F62F500595B56 /* [CP] Copy Pods Resources */,
 				8F1E093F1FBAF357006787EA /* ShellScript */,
+				86F29DBC204559BB00A4EC4A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,7 +374,7 @@
 					47D9943F1F7D35F800E14A6B = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -440,11 +465,11 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MapWize-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Mapwize-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9B39663319DAE81604DFDEE /* [CP] Embed Pods Frameworks */ = {
@@ -453,21 +478,25 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MapWize/Pods-MapWize-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mapwize/Pods-Mapwize-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Font-Awesome-Swift/Font_Awesome_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/GPSIndoorLocationProvider/GPSIndoorLocationProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/IndoorLocation/IndoorLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MTBBarcodeScanner/MTBBarcodeScanner.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/MapwizeForMapbox/MapwizeForMapbox.framework",
 				"${BUILT_PRODUCTS_DIR}/ionicons/ionicons.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPSIndoorLocationProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IndoorLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTBBarcodeScanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapwizeForMapbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ionicons.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +514,7 @@
 				4763215C1F83699700A7D3A8 /* SWRevealViewController.h in Sources */,
 				8F5E91111FC5B7040098B161 /* MapwizeLocationProvider.swift in Sources */,
 				4763263C1F844AB400A7D3A8 /* DirectionView.swift in Sources */,
+				8647429B20455AF300B068AD /* LVLCIndoorLocationProvider.m in Sources */,
 				8F5E91071FC433A40098B161 /* QrCodeTargetView.swift in Sources */,
 				4763215D1F83699700A7D3A8 /* SWRevealViewController.m in Sources */,
 				47A0B0341F828BC500A40C2A /* SearchBarCell.swift in Sources */,
@@ -649,9 +679,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = GGHGAE294R;
+				DEVELOPMENT_TEAM = 2SBKWA9KN7;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -659,8 +689,10 @@
 				);
 				INFOPLIST_FILE = "Mapwize/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.mapwize.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lucibel.mapwize.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d8c15200-e720-48db-b4a7-b310a647dd6d";
+				PROVISIONING_PROFILE_SPECIFIER = "XM Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mapwize/Classes/Mapwize-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -674,8 +706,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GGHGAE294R;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2SBKWA9KN7;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,8 +716,10 @@
 				);
 				INFOPLIST_FILE = "Mapwize/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.mapwize.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lucibel.mapwize.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "aaec0897-57e7-40a0-8791-3f77b1f92577";
+				PROVISIONING_PROFILE_SPECIFIER = AllNovDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mapwize/Classes/Mapwize-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
