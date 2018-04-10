@@ -689,8 +689,10 @@ static const NSInteger kErrorCodeTorchModeUnavailable = 1004;
     
     self.currentCaptureDeviceInput = deviceInput;
     [self updateFocusPreferencesOfDevice:deviceInput.device reset:NO];
-    
-    [session addInput:deviceInput];
+    //if (deviceInput.isAccessibilityElement){
+        [session addInput:deviceInput];
+        
+    //}
 }
 
 - (void)removeDeviceInput:(AVCaptureDeviceInput *)deviceInput session:(AVCaptureSession *)session {

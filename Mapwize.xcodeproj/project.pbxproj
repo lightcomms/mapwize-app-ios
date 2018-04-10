@@ -26,9 +26,9 @@
 		47A11A211F84E1AE00B35B34 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479F5E011F7FDFAF00C021A3 /* ionicons.ttf */; };
 		47A44CC21F8501AE0062D187 /* RouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A44CC01F84E6060062D187 /* RouteView.xib */; };
 		47A44CC31F8501B50062D187 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A44CC11F84E6060062D187 /* RouteView.swift */; };
+		86017272207CC896003C2750 /* libvlc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86017271207CC896003C2750 /* libvlc.framework */; };
+		86017273207CC896003C2750 /* libvlc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86017271207CC896003C2750 /* libvlc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8647429B20455AF300B068AD /* LVLCIndoorLocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8647429920455AF300B068AD /* LVLCIndoorLocationProvider.m */; };
-		86F29DBA204559BB00A4EC4A /* libvlc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F29DB9204559BB00A4EC4A /* libvlc.framework */; };
-		86F29DBB204559BB00A4EC4A /* libvlc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86F29DB9204559BB00A4EC4A /* libvlc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F0A2E8E1FBECE7A004B47A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A2E901FBECE7A004B47A1 /* Localizable.strings */; };
 		8F0A2E961FBEDA9E004B47A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A2E981FBEDA9E004B47A1 /* InfoPlist.strings */; };
 		8F15B40A1FB4781C00E09239 /* PlaceWithSubtitleSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15B4091FB4781C00E09239 /* PlaceWithSubtitleSearchBarCell.swift */; };
@@ -49,13 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		86F29DBC204559BB00A4EC4A /* Embed Frameworks */ = {
+		86017270207CC02E003C2750 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				86F29DBB204559BB00A4EC4A /* libvlc.framework in Embed Frameworks */,
+				86017273207CC896003C2750 /* libvlc.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,9 +89,9 @@
 		4ABEA29C6B11AA8E20AA76DD /* Pods-Mapwize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapwize.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mapwize/Pods-Mapwize.debug.xcconfig"; sourceTree = "<group>"; };
 		532961871BE2CA3D22506735 /* Pods-MapWize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapWize.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapWize/Pods-MapWize.debug.xcconfig"; sourceTree = "<group>"; };
 		59F399EC05A7FEB198B44636 /* Pods-MapWize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapWize.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapWize/Pods-MapWize.release.xcconfig"; sourceTree = "<group>"; };
+		86017271207CC896003C2750 /* libvlc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libvlc.framework; sourceTree = "<group>"; };
 		8647429920455AF300B068AD /* LVLCIndoorLocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVLCIndoorLocationProvider.m; sourceTree = "<group>"; };
 		8647429A20455AF300B068AD /* LVLCIndoorLocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVLCIndoorLocationProvider.h; sourceTree = "<group>"; };
-		86F29DB9204559BB00A4EC4A /* libvlc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libvlc.framework; sourceTree = "<group>"; };
 		8F0A2E911FBECEC1004B47A1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F0A2E921FBED759004B47A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F0A2E931FBED789004B47A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86F29DBA204559BB00A4EC4A /* libvlc.framework in Frameworks */,
+				86017272207CC896003C2750 /* libvlc.framework in Frameworks */,
 				BFD490F3DC0F6FCC82CC90BA /* Pods_Mapwize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +291,7 @@
 		47D994371F7D35F800E14A6B = {
 			isa = PBXGroup;
 			children = (
-				86F29DB9204559BB00A4EC4A /* libvlc.framework */,
+				86017271207CC896003C2750 /* libvlc.framework */,
 				47D994421F7D35F800E14A6B /* Mapwize */,
 				47D994411F7D35F800E14A6B /* Products */,
 				47AA6FAEDCE114E918314D9B /* Pods */,
@@ -350,7 +350,7 @@
 				E9B39663319DAE81604DFDEE /* [CP] Embed Pods Frameworks */,
 				7043FAAF1B4F62F500595B56 /* [CP] Copy Pods Resources */,
 				8F1E093F1FBAF357006787EA /* ShellScript */,
-				86F29DBC204559BB00A4EC4A /* Embed Frameworks */,
+				86017270207CC02E003C2750 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -697,6 +697,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7s arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -716,6 +717,7 @@
 				);
 				INFOPLIST_FILE = "Mapwize/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = io.lucibel.mapwize.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "aaec0897-57e7-40a0-8791-3f77b1f92577";
@@ -723,6 +725,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Mapwize/Classes/Mapwize-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7s arm64 armv7";
 			};
 			name = Release;
 		};

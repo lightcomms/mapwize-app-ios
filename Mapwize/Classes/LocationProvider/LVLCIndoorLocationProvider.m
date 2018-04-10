@@ -17,7 +17,7 @@
 @property (atomic,strong) ILIndoorLocation* lastIndoorLocation;
 @property (atomic,strong) NSString * vlcID;
 @property (atomic) BOOL beaconsFromServerAvailable;
-@property (atomic,strong) id beacons;
+@property (atomic,strong,readwrite) id beacons;
 @property (atomic,strong) NSTimer * timer;
 @property (atomic) BOOL locationLocked;
 @end
@@ -32,7 +32,7 @@
         NSError * error =nil;
         NSURL *url = [NSURL URLWithString:@"https://api.mapwize.io/v1/beacons?api_key=e2af1248a493cd196fe54b1dbdba8ba8&venueId=5a8b1432c0b1600013546407"];
         NSData *data = [NSData dataWithContentsOfURL:url];
-        _beacons = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        self.beacons = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     
         if (error) _beaconsFromServerAvailable = false;
         else _beaconsFromServerAvailable = true;
@@ -57,7 +57,7 @@
 }
 
 -(ILIndoorLocation*) locationFromServer:(NSString*) vlcid{
-    if (!_beacons) return nil;
+    if (!self.beacons) return nil;
     ILIndoorLocation * innerIndoorLocation = [[ILIndoorLocation alloc]init];
     for (id beacon in self.beacons) {
         // do something with object

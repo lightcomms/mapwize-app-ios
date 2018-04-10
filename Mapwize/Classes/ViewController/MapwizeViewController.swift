@@ -130,6 +130,14 @@ class MapwizeViewController: UIViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if ((locationProvider) != nil){
+            locationProvider.start()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        locationProvider.stop()
     }
     
     // MARK: Configuration
