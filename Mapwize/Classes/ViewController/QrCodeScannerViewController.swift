@@ -28,7 +28,6 @@ class QrCodeScannerViewController: UIViewController {
         MTBBarcodeScanner.requestCameraPermission(success: { success in
             if success {
                 do {
-                    
                     self.scanner?.didStartScanningBlock = {
                         self.scanner?.scanRect = self.targetView.frame
                     }
