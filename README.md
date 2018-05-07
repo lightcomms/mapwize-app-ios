@@ -16,6 +16,12 @@ You will need to set your [Mapbox](https://www.mapbox.com) and [Mapwize](https:/
 
 Sample keys are given for Mapwize and Mapbox. Please note that those keys can only be used for testing purposes, with very limited traffic, and cannot be used in production. Get your own keys from [mapwize.io](https://www.mapwize.io) and [mapbox.com](https://www.mapbox.com). Free accounts are available.
 
+## Deep-linking
+
+The app supports deep-linking using the mapwize:// protocol. To avoid conflicts, please change the protocol in your own app.
+
+Supported url are in the same format as QR-Code urls.
+
 ## License and credits
 
 The app is released under MIT license.

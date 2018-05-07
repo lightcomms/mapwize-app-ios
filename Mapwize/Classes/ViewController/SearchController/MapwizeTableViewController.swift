@@ -62,6 +62,13 @@ class MapwizeTableViewController: UITableViewController {
         self.tableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(getInfo(notif:)), name: .UIKeyboardDidShow , object: nil)
+        
+        self.tableView.layer.masksToBounds = false
+        self.tableView.layer.shadowOpacity = 0.3
+        self.tableView.layer.shadowRadius = 4
+        self.tableView.layer.shadowColor = UIColor.black.cgColor
+        self.tableView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

@@ -173,7 +173,7 @@ class PlaceView: UIView {
         
     }
     
-    func moreDetailsAction(sender: UIButton!) {
+    @objc func moreDetailsAction(sender: UIButton!) {
         self.delegate?.didTapMoreDetails()
     }
     

@@ -37,7 +37,12 @@ class BottomSheetViewController : UIViewController {
     func show() {
         UIView.animate(withDuration: 0.3) { [weak self] in
             let frame = self?.view.frame
-            let yComponent = UIScreen.main.bounds.height -  self!.placeViewHeight - self!.defaultBottomMargin
+            var yComponent:CGFloat;
+            if #available(iOS 11.0, *) {
+                yComponent = (self?.view.superview?.safeAreaLayoutGuide.layoutFrame.height)! + (self?.view.superview?.safeAreaInsets.top)! + (self?.view.superview?.safeAreaInsets.bottom)! -  self!.placeViewHeight - self!.defaultBottomMargin
+            } else {
+                yComponent = UIScreen.main.bounds.height -  self!.placeViewHeight - self!.defaultBottomMargin
+            }
             self?.view.frame = CGRect.init(x:0, y:yComponent, width:frame!.width, height:frame!.height)
         }
     }
@@ -78,7 +83,7 @@ class BottomSheetViewController : UIViewController {
     }
     
     var lastTranslationY:CGFloat = 0.0
-    func panGesture(recognizer: UIPanGestureRecognizer) {
+    @objc func panGesture(recognizer: UIPanGestureRecognizer) {
         if htmlContent != nil && htmlContent!.count > 0 {
             let translation = recognizer.translation(in: self.view)
             let y = self.view.frame.minY

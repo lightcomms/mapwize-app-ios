@@ -1,0 +1,6 @@
+framework module MapwizeForMapbox {
+  umbrella header "MapwizeForMapbox-umbrella.h"
+
+  export *
+  module * { export * }
+}

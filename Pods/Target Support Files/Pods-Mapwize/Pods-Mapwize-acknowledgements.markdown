@@ -78,7 +78,7 @@ SOFTWARE.
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Wei Wang
+Copyright (c) 2018 Wei Wang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -123,9 +123,34 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## ManualIndoorLocationProvider
+
+MIT License
+
+Copyright (c) 2017 Indoor Location
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
 ## Mapbox-iOS-SDK
 
-mapbox-gl-native copyright (c) 2014-2017 Mapbox.
+mapbox-gl-native copyright (c) 2014-2018 Mapbox.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -1070,6 +1095,483 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+
+## NAOSDK
+
+NAO SOFTWARE DEVELOPMENT KIT LICENSE AGREEMENT
+
+Note: By downloading, installing, or using the NAO SDK ("SDK"), you conclude and agree to the terms of this license agreement (the "Agreement") in a legally binding manner with Pole Star SA. 11 rue Paulin Talabot, 31100 Toulouse, France ("Pole Star"). If you disagree with any of the following terms, then do not use the SDK. In the following, the terms "you" and "Company" shall refer, jointly and severally, to you individually and any organization on whose behalf you act.
+
+1.	Purpose. The "SDK" shall mean the Pole Star software development kit, including any subsequent updates or upgrade made available to Company, and any associated documentation, software code, or other materials made available by Pole Star to assist Company in developing solution(s) (each a "Company Product") that interoperates with Pole Star product(s). This Agreement applies to any SDK provided by Pole Star or that includes, displays, or links to this Agreement, and to any updates, supplements or support services for this SDK. Company may only use this SDK to develop a Company Product that interoperates with one or more Pole Star product(s) and to certify compatibility of Company's Product(s) with Pole Star's product(s).
+
+2.	Use Rights. Subject to Company's compliance with the terms of this Agreement, Company may (i) download, install, and use the SDK on its devices solely to design, develop, and test Company Product(s), (ii) make a reasonable number of copies of the SDK as necessary to develop Company Product(s), provided that Company reproduces complete copies of the SDK, including without limitation all "read me" files, copyright notices, and other legal notices and terms, and (iii) use, reproduce, modify, and distribute the sample code included in the SDK only as embedded in a Company Product that complies with the technical limitations and the certification requirements set forth in the documentation (the "Certification Requirements"). Pole Star reserves the right to discontinue offering the SDK (or any updates thereto) or to modify the SDK at any time in its sole discretion. Free/open source software components distributed in this SDK are licensed to Company under the terms of the applicable free/open source license agreements. The free/open source software licenses can be found in the library-license.txt file included in the SDK or online at http://docs.nao-cloud.com/library-license.
+
+3.	Restrictions. Except as set forth above, Company may not (1) modify, distribute, sell, lease, rent, lend, or sublicense the SDK (or any copy or portion thereof), (2) pre-install or embed applications created using this SDK on third-party devices, (3) charge users of the Company Product any fee to access or use any Pole Star offered services from the Company Product, (4) use the SDK to create, design, or develop anything other than Company Product(s), (5) create any alternate connections to the SDK other than through and with the Pole Star Console, (6) make any more copies of the SDK than are reasonably necessary for the authorized use, (7) modify, create derivative works of, reverse engineer, reverse compile, disassemble the SDK, or otherwise seek to ascertain the source code, except and only to the extent that applicable law expressly permits, despite this limitation (in which case Company shall provide Pole Star with prior notification and the opportunity to respond), (8) create or attempt to create a product that will understand and interpret the communications and commands between Pole Star's products, or (9) use the SDK in any manner to (a) circumvent any technical or licensing restrictions of Pole Star products, (b) upload or otherwise transmit any material containing software viruses or other computer code, files or programs designed to interrupt, destroy, or limit the functionality of any software or hardware, (c) use SDK or any of its features to invade the privacy of any person or otherwise violate any law, including, but not limited to, by usage of location functionality, location/tracking services, etc.
+
+4.	License to Marks. Subject to Company's compliance with the terms of this Agreement, Pole Star grants to Company a limited, revocable, non-exclusive, non-sublicensable, non-assignable, non-transferable right and license to display the "Pole Star" and the "NAO" Marks solely in connection with marketing of Company Product(s) that meet the Certification Requirements in accordance with this Agreement. Company agrees and acknowledges that (i) the Pole Star and NAO Marks, whether or not registered, are the sole property of Pole Star or its suppliers; (ii) Company's reproduction of the Pole Star or NAO Marks inures to the benefit of Pole Star; and (iii) Company acquires no legal rights in the Pole Star Marks. Company agrees that it shall not adopt or use any Pole Star Marks or any word, company name, mark or design that is similar to or confusing with the Pole Star Marks. Company shall not use the Pole Star Marks in connection with any activity that (a) disparages Pole Star or its products or services; (b) violates or infringes any intellectual property of Pole Star; or (c) violates any local, state, federal, country, or international regulation or law.
+
+5.	Feedback. Company may, from time to time, provide feedback to Pole Star concerning the functionality and performance of the SDK or Pole Star products including, without limitation, identifying potential errors and improvements ("Feedback"). Feedback which is provided by Company to Pole Star in connection with this Agreement may be used by Pole Star and its affiliates to improve or enhance its products and, accordingly, Pole Star and its affiliates shall have a non-exclusive, perpetual, irrevocable, royalty-free, worldwide right and license to use, reproduce, disclose, sublicense, modify, make, have made, distribute, sell, offer for sale, display, perform, create derivative works, permit distribution and otherwise exploit such Feedback without restriction.
+
+6.	Support. Pole Star does not provide technical or other support for the SDK under this Agreement.
+
+7.	Termination. This Agreement shall continue as long as Company is in compliance with the terms specified herein or until otherwise terminated. Either party may terminate this Agreement upon thirty days written notice if the other party is in material breach of any term of this Agreement. Company agrees, upon termination, to immediately destroy all copies of the SDK within the Company's possession or control. The following Sections survive any termination of this Agreement: Sections 5, 8, 9, 10, 11, 12.
+
+8.	Ownership. The SDK is licensed, not sold. Pole Star reserves all other rights not granted herein. The parties acknowledge that, as between the parties, (a) Pole Star or its licensors retain complete ownership of all Intellectual Property Rights in and to the SDK and (b) Company or its licensors retain complete ownership of all Intellectual Property Rights in the Company Product(s) (subject to Pole Star's underlying ownership of the Intellectual Property Rights in and to the SDK). Nothing in this Agreement will be construed to transfer or assign any Intellectual Property Rights of either party to the other. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights.
+
+9.	DISCLAIMER OF WARRANTIES & LIABILITY. THE SDK IS PROVIDED "AS IS" WITHOUT ANY WARRANTIES OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, POLE STAR DISCLAIMS ANY IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL POLE STAR BE LIABLE FOR ANY LOST PROFITS OR BUSINESS OPPORTUNITIES, LOSS OF USE, BUSINESS INTERRUPTION, LOSS OF DATA, OR ANY OTHER INDIRECT, SPECIAL,INCIDENTAL, OR CONSEQUENTIAL DAMAGES RELATING TO THE SDK OR THISAGREEMENT, UNDER ANY THEORY OF LIABILITY, WHETHER BASED IN CONTRACT, TORT, NEGLIGENCE, PRODUCT LIABILITY, OR OTHERWISE. POLE STAR'S TOTAL LIABILITY RELATING TO THE SDK OR THIS AGREEMENT WILL NOT, IN ANY EVENT, EXCEED US$150.00 THE FOREGOING LIMITATIONS SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, REGARDLESS OF WHETHER POLE STAR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF WHETHER ANY REMEDY FAILS OF ITS ESSENTIAL PURPOSE.
+
+10.	INDEMNIFICATION. Company shall defend, indemnify, and hold harmless Pole Star and its affiliates and their respective directors, officers, employees, contractors, agents, and end users ("Indemnified Parties") against any third party claim, suit, or proceeding ("Claim") and any liability, damage, loss, cost, and expenses (including attorney's fees) arising from the Claim ("Damages") threatened or brought against any Indemnified Party alleging that any Company Product infringes (including contributory infringement) or misappropriates any third party intellectual property right. The Indemnified Party shall provide Company written notice of any Claim within a reasonable time after the Indemnified Party receives written notice of the Claim. The Indemnified Party's failure to provide timely written notice will not excuse Company's obligation under this Agreement unless lack of actual notice of the Claim has a substantially adverse effect on Company's ability to defend the Claim. The any Indemnified Party must allow Company sole control of the defense. Company shall not settle any Claim, and no settlement of a Claim will be binding on the Indemnified Party, without its prior written consent, which will not be unreasonably withheld or delayed.
+
+11.	Confidentiality. "Confidential Information" means information or material provided the discloser to the recipient that is in tangible form and labeled "confidential" or the like, or, information, which a reasonable person knew or should have known to be confidential. The following information shall be considered Confidential Information whether or not marked or identified as such: (a) license keys; (b) information regarding Pole Star pricing, product roadmaps and strategic marketing plans; (c) non-public materials relating to the SDK or Pole Star products, and (d) the terms and conditions of this Agreement. Company shall keep all Confidential Information it receives confidential using the same protections that it applies to its own information of like importance, but in no event less than reasonable care, and may use such information solely for the purposes contemplated by this Agreement or as otherwise agreed in writing. Confidential Information may be disclosed solely to employees, contractors and consultants who have a legitimate need to know the Confidential Information and are bound to confidentiality restrictions substantially equivalent to this Section 11 and who are not working on Company products or services that are competitive with Pole Star's and its affiliates' products and services. This Section will not apply to information that: (a) was rightfully in possession of the recipient prior to receipt of such Confidential Information from the discloser; (b) is or becomes a matter of public knowledge through no fault of the party receiving such Confidential Information hereunder; (c) is rightfully received from a third party without a duty of confidentiality; (d) is independently developed by recipient without breach of any confidentiality obligations; or (e) is disclosed by recipient with discloser's written approval; (f) the recipient is required to disclose by applicable law or court order, or (g) in confidence, in connection with an actual or proposed merger, acquisition, or similar transaction. In addition, recipient will be allowed to disclose (i) discloser's Confidential Information to the extent that such disclosure is required by law or by the order of a court or similar judicial or administrative body, provided that recipient notifies discloser of such required disclosure promptly and in writing and cooperates with discloser, at discloser's request and expense, in any lawful action to contest or limit the scope of such required disclosure, (ii) the terms and conditions of this Agreement in confidence in connection with an actual or proposed merger, acquisition, or similar transaction. The parties acknowledge that breach of this Section 11 may cause irreparable damage to the discloser for which monetary damages will be an inadequate remedy. Accordingly, the discloser will anticipated breach of this Section.
+
+12.	No party has the right to issue media releases, public announcements or public disclosures relating to the existence of or the terms of this Agreement or use the other party's name in any promotional or marketing material (other than as required by legal, accounting or regulatory requirements)
+
+13.	General.
+a. This Agreement shall be governed by and shall be construed in accordance with the laws of France. All disputes between the Parties in connection with this Agreement, which the Parties are unable to amicably settle within thirty (30) days from notice of such dispute by one Party to the other (or such other period as may be mutually agreed upon), shall be referred to the exclusive jurisdiction of the Commercial Court of Toulouse, France.
+b.	Assignment. This Agreement may not be assigned in whole or in part, by operation of law or otherwise, by either party without the prior written consent of the other party. Notwithstanding the forgoing, Pole Star may assign this Agreement in connection with merger, a corporate reorganization, or the transfer of substantially all of the assets of the business to which this Agreement relates. This Agreement will bind and inure to the benefit of the parties and their permitted assigns.
+d.	Export Control. Company acknowledges that the SDK is of French origin, is provided subject to the European and French Export Administration Regulations, may be subject to the export control laws of the applicable territory, and that diversion contrary to applicable export control laws is prohibited. Company represents, warrants and covenants that (1) Company is not, and is not acting on behalf of, (a) any person who is a citizen, national, or resident of, or who is controlled by the government of any country to which the United States has prohibited export transactions; or (b) any person or entity listed on the U.S. Treasury Department list of Specially Designated Nationals and Blocked Persons, or the U.S. Commerce Department Denied Persons List or Entity List; and (2) Company will not permit the SDK to be used for any purposes prohibited by law, including, any prohibited development, design, manufacture or production of missiles or nuclear, chemical or biological weapons.
+e.	Data Privacy. Company agrees that Pole Star may periodically collect, process and store technical and related information about Company's device, system, application, peripherals and Company's use of the SDK, including without limitation: internet protocol address, hardware identification, operating system, application software, peripheral hardware, data provided by peripheral hardware, number of active plugins and software development kits, the successful installation and launch of SDK, and SDK usage statistics (collectively, "Technical Data"). Pole Star will use Technical Data for internal statistical and analytical purposes to facilitate support, invoicing or online services, the provisioning of updates, and the development of Pole Star products and services. Pole Star may transfer Technical Data to other companies in the Pole Star worldwide group of companies from time to time. Company acknowledges that correspondence and log files generated in conjunction with a request for support services may contain sensitive, confidential or personal information. Company is solely responsible for taking the steps necessary to protect such data, including obfuscating the logs or otherwise guarding such information prior to sending it to Pole Star.
+f.	The parties hereto expressly understand and agree that the parties are independent contractors in the performance of each and every part of this Agreement, are each solely responsible for its respective employees and agents as well as related labor costs and expenses.
+g.	Notices. Notices to either party must be in writing and must be delivered in person, by first-class certified mail, postage prepaid, return receipt requested, or by a express courier service addressed as stated at the beginning of this Agreement.
+
+
+## Socket.IO-Client-Swift
+
+The MIT License (MIT)
+
+Copyright (c) 2014-2015 Erik Little
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+
+This library makes use of the following third party libraries:
+
+Starscream
+----------
+
+Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "{}"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright {yyyy} {name of copyright owner}
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+## SocketIndoorLocationProviderObjc
+
+MIT License
+
+Copyright (c) 2017 Indoor Location
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+## Starscream
+
+                              Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   Copyright (c) 2014-2016 Dalton Cherry.
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
 
 ## ionicons
 

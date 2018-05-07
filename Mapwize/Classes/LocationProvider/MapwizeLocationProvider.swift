@@ -48,10 +48,6 @@ class MapwizeLocationProvider: ILIndoorLocationProvider {
         
         self.dispatchDidUpdate(location)
         
-        /*for delegate in self.delegates {
-            let castedDelegate = delegate as? ILIndoorLocationProviderDelegate
-            castedDelegate?.didLocationChange(location)
-        }*/
     }
     
     @objc func tick() {

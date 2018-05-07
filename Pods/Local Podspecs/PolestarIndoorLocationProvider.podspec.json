@@ -1,0 +1,28 @@
+{
+  "name": "PolestarIndoorLocationProvider",
+  "version": "1.0.0",
+  "license": {
+    "type": "MIT"
+  },
+  "summary": "Allows to use polestar to provide indoorlocation",
+  "homepage": "https://github.com/IndoorLocation/polestar-indoor-location-provider-ios-swift.git",
+  "authors": {
+    "Indoor Location": "indoorlocation@mapwize.io"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/IndoorLocation/polestar-indoor-location-provider-ios-swift.git",
+    "tag": "1.0.0"
+  },
+  "source_files": "polestar-indoor-location-provider-ios/IndoorLocationProvider/*.{h,m}",
+  "dependencies": {
+    "IndoorLocation": [
+      "~> 1.0"
+    ],
+    "NAOSDK": [
+
+    ]
+  }
+}

@@ -14,35 +14,56 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
-  - GPSIndoorLocationProvider (1.0.2):
-    - IndoorLocation (~> 1.0)
-  - IndoorLocation (1.0.3)
+  - GPSIndoorLocationProvider (1.0.3):
+    - IndoorLocation (= 1.0.4)
+  - IndoorLocation (1.0.4)
   - ionicons (2.1.1)
-  - Kingfisher (4.6.1)
-  - Mapbox-iOS-SDK (3.7.3)
-  - MapwizeForMapbox (1.0.3):
-    - AFNetworking
+  - Kingfisher (4.7.0)
+  - ManualIndoorLocationProvider (1.0.1):
     - IndoorLocation (~> 1.0)
-    - Mapbox-iOS-SDK
-  - MTBBarcodeScanner (5.0.3)
+  - Mapbox-iOS-SDK (4.0.0)
+  - MapwizeForMapbox (1.3.0):
+    - AFNetworking (~> 3.0)
+    - IndoorLocation (~> 1.0)
+    - Mapbox-iOS-SDK (~> 4.0)
+  - MTBBarcodeScanner (5.0.5)
+  - NAOSDK (4.4.3)
+  - SelectorIndoorLocationProvider (1.0.0):
+    - IndoorLocation (~> 1.0)
+  - Socket.IO-Client-Swift (13.1.3):
+    - Starscream (~> 3.0.2)
+  - SocketIndoorLocationProviderObjc (1.0.1):
+    - IndoorLocation (= 1.0.4)
+    - Socket.IO-Client-Swift (= 13.1.3)
+  - Starscream (3.0.5)
 
 DEPENDENCIES:
   - GPSIndoorLocationProvider
   - ionicons
   - Kingfisher
-  - MapwizeForMapbox (= 1.0.3)
+  - ManualIndoorLocationProvider
+  - MapwizeForMapbox
   - MTBBarcodeScanner
+  - NAOSDK
+  - SelectorIndoorLocationProvider
+  - SocketIndoorLocationProviderObjc
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
-  GPSIndoorLocationProvider: cfec9cdef6a743822e5f8bacdf19ef60360a5c83
-  IndoorLocation: 077b1453d425e2d91b29f497b116d09defeb9b15
+  GPSIndoorLocationProvider: 0b9ed918465865fae7824db5e2dca27d0088bd82
+  IndoorLocation: 9812c8c2d499ef25e6146ef90cf23f8d107213a8
   ionicons: 630bcd2c2970741c3359e3a35ad544e71d3c086b
-  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
-  Mapbox-iOS-SDK: 5304bd9605babe6da9050ea4cb23c1671420b737
-  MapwizeForMapbox: daf4527bf24ac66b04aac4add99566bca7ae02f8
-  MTBBarcodeScanner: 3ce0f1b0085ef00c726ded663c490a63b29c9aa5
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  ManualIndoorLocationProvider: d88640a41b7ab0208de85e4197e8883afa2520f3
+  Mapbox-iOS-SDK: 271754e96eb4434ba1b0a8c68432e1ea26fe9841
+  MapwizeForMapbox: 59b743aebc7401a8e1f6a6bde98df6b47528fbdc
+  MTBBarcodeScanner: 3ac7b553d6bf740e7dc281d9a547962f7aea7abc
+  NAOSDK: 18f669d675e8c8492b2a5efc512a19744974cafc
+  SelectorIndoorLocationProvider: f5e3176f0d17d7799a144998dd3aba412890d5f0
+  Socket.IO-Client-Swift: d30d6fd08a38ad2a182b090936a043bf512ab2de
+  SocketIndoorLocationProviderObjc: 711d3a4fe95b1edef5e834bcbc15ad1d1cf51788
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
 
-PODFILE CHECKSUM: a224a2bc5239de816fcddb549e1521db3bec0d7c
+PODFILE CHECKSUM: ef665845409b9de4ed12a1f25e4912e1f17d0741
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0

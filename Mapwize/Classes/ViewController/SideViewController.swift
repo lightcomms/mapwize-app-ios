@@ -40,21 +40,21 @@ class SideViewController : UIViewController {
         
     }
     
-    func accessFunction(sender:UITapGestureRecognizer) {
+    @objc func accessFunction(sender:UITapGestureRecognizer) {
         mapController.revealLeftMenu()
         mapController.openAccessKeyAlert()
     }
-    func creditsFunction(sender:UITapGestureRecognizer) {
+    @objc func creditsFunction(sender:UITapGestureRecognizer) {
         mapController.revealLeftMenu()
         mapController.showCredits()
     }
-    func aboutFunction(sender:UITapGestureRecognizer) {
+    @objc func aboutFunction(sender:UITapGestureRecognizer) {
         mapController.revealLeftMenu()
         let application = UIApplication.shared
         let url = URL(string:"https://www.mapwize.io")
         application.openURL(url!)
     }
-    func contactFunction(sender:UITapGestureRecognizer) {
+    @objc func contactFunction(sender:UITapGestureRecognizer) {
         mapController.revealLeftMenu()
         UIApplication.shared.openURL(URL(string: "mailto:support@mapwize.io")!)
     }

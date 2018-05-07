@@ -5,7 +5,6 @@ import MapwizeForMapbox
 import Mapbox
 import Kingfisher
 import SystemConfiguration
-
 enum SearchMode {
     case none
     case defaultSearch
@@ -65,17 +64,25 @@ class MapwizeViewController: UIViewController  {
     
     var directionMemory:(venueId:String, from:MWZDirectionPoint, to:MWZDirectionPoint, direction:MWZDirection)?
     
-    var locationProvider:MapwizeLocationProvider!
+    var locationProvider:LocationProvidersManager!
+    var lastLocation:ILIndoorLocation?
     
     var defaultBottomMargin:CGFloat = 0.0
     var defaultTopMargin:CGFloat = 0.0
+    
+    var parseObjectFromDeepLink:MWZParsedUrlObject?
+    var startedFromUrl = false
+    
+    override func loadView() {
+        super.loadView()
+        initMap()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.automaticallyAdjustsScrollViewInsets = false;
         checkIphoneXMargin()
-        initMap()
         initNavigation()
         
         self.searchTableView = self.searchTableController.tableView
@@ -88,7 +95,14 @@ class MapwizeViewController: UIViewController  {
         
         self.directionView.isHidden = true
         self.directionView.delegate = self
-        
+        self.directionView.layer.cornerRadius = 0.5 * languageButton.bounds.size.height
+        self.directionView.layer.masksToBounds = false
+        self.directionView.layer.shadowColor = Color.black.cgColor
+        self.directionView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.directionView.layer.shadowOpacity = 0.3
+        self.directionView.layer.shadowRadius = CGFloat(4)
+        self.directionView.layer.zPosition = 10
+
         self.directionView.fromSearchBar.delegate = self
         self.directionView.toSearchBar.delegate = self
         
@@ -109,7 +123,14 @@ class MapwizeViewController: UIViewController  {
         }
         self.addBottomSheetView()
         initBottomBar()
-       
+        locationProvider = LocationProvidersManager()
+        let filters = MWZApiFilter()
+        MWZApi.getVenuesWith(filters, success: { (venues) in
+            self.locationProvider.venues = venues
+            self.locationProvider.checkProviders(location: self.locationProvider.lastLocation)
+        }) { (err) in
+            print(err ?? "Unknown error")
+        }
     }
     
     func addBottomSheetView() {
@@ -129,6 +150,7 @@ class MapwizeViewController: UIViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
     }
     
     // MARK: Configuration
@@ -147,16 +169,18 @@ class MapwizeViewController: UIViewController  {
     }
     
     func initNavigation() {
-        self.headerView.layer.borderColor = UIColor.lightGray.cgColor
-        self.headerView.layer.borderWidth = 0.5
-        self.headerView.layer.cornerRadius = 4.0
+        self.headerView.layer.masksToBounds = false
+        self.headerView.layer.shadowColor = Color.black.cgColor
+        self.headerView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.headerView.layer.shadowOpacity = 0.3
+        self.headerView.layer.shadowRadius = CGFloat(4)
+        self.headerView.layer.zPosition = 10
+
         self.setupMenuButtonDefault()
         self.headerSearchTextField.delegate = self
         self.headerSearchTextField.addTarget(self, action: #selector(headerSearchTextFieldDidChange(textField:)), for: .editingChanged);
         self.directionView.fromSearchBar.addTarget(self, action: #selector(headerSearchTextFieldDidChange(textField:)), for: .editingChanged);
         self.directionView.toSearchBar.addTarget(self, action: #selector(headerSearchTextFieldDidChange(textField:)), for: .editingChanged);
-        
-        //self.qrCodeButton.setBackgroundImage(IonIcons.image(withIcon: ion_qr_scanner, iconColor: .black, iconSize: 30, imageSize: CGSize(width: 30, height: 30)), for: UIControlState.normal)
         
         self.backedView.isHidden = true
         self.searchBackedView.isHidden = true
@@ -167,13 +191,13 @@ class MapwizeViewController: UIViewController  {
         self.searchBackedView.addGestureRecognizer(serachtap)
     }
     
-    func handleTapBackView(_ sender: UITapGestureRecognizer? = nil) {
+    @objc func handleTapBackView(_ sender: UITapGestureRecognizer? = nil) {
         if self.isLeftMenuOpen {
             self.revealLeftMenu()
         }
     }
     
-    func handleTapSearchBackView(_ sender: UITapGestureRecognizer? = nil) {
+    @objc func handleTapSearchBackView(_ sender: UITapGestureRecognizer? = nil) {
         if self.currentSearchMode != .none {
             self.closeSearch()
         }
@@ -188,7 +212,7 @@ class MapwizeViewController: UIViewController  {
         }
     }
     
-    func revealLeftMenu() {
+    @objc func revealLeftMenu() {
         self.revealViewController().revealToggle(animated: true)
         
     }
@@ -199,7 +223,7 @@ class MapwizeViewController: UIViewController  {
         self.leftMenuButton.addTarget(self, action: #selector(closeSearch), for: UIControlEvents.touchDown)
     }
     
-    func closeSearch() {
+    @objc func closeSearch() {
         self.closeSearchWith(value:nil)
     }
     
@@ -224,7 +248,7 @@ class MapwizeViewController: UIViewController  {
                 self.select(placeList:placeList)
             }
             if value != nil {
-                self.mapwizePlugin.followUserMode = NONE
+                self.mapwizePlugin.setFollowUserMode(NONE)
             }
         }
         
@@ -267,7 +291,7 @@ class MapwizeViewController: UIViewController  {
         self.currentSearchMode = nil
     }
     
-    func headerSearchTextFieldDidChange(textField: UITextField){
+    @objc func headerSearchTextFieldDidChange(textField: UITextField){
         let query = textField.text!
         self.setupSearchResult(query: query, mode: self.currentSearchMode)
     }
@@ -294,7 +318,7 @@ class MapwizeViewController: UIViewController  {
                     searchParams.query = query
                     searchParams.objectClass = ["place", "placeList"]
                     searchParams.venueId = currentVenue.identifier
-                    searchParams.universeId = self.mapwizePlugin.getUniverse().identifier
+                    searchParams.universeId = self.mapwizePlugin.getUniverse()?.identifier
                     MWZApi.search(with: searchParams, success: { (results) in
                         self.searchTableController.filteredSearchObjects = results!
                         if self.searchTableController.filteredSearchObjects.count == 0 && query.count > 0 {
@@ -388,7 +412,7 @@ class MapwizeViewController: UIViewController  {
     }
     
     func initMap() {
-        var options = MWZOptions()
+        let options = MWZOptions()
         self.mapwizePlugin = MapwizePlugin.init(self.mapView, options: options)
         self.mapwizePlugin.delegate = self
         self.mapwizePlugin.setBottomPadding(defaultBottomMargin + 60)
@@ -400,24 +424,30 @@ class MapwizeViewController: UIViewController  {
     
         self.universesButton.backgroundColor = .white
         self.universesButton.layer.cornerRadius = 0.5 * universesButton.bounds.size.height
-        self.universesButton.layer.borderColor = UIColor.lightGray.cgColor
-        self.universesButton.layer.borderWidth = 0.5
+        self.universesButton.layer.masksToBounds = false
+        self.universesButton.layer.shadowColor = Color.black.cgColor
+        self.universesButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.universesButton.layer.shadowOpacity = 0.3
+        self.universesButton.layer.shadowRadius = CGFloat(4)
+
         
         self.directionButton.backgroundColor = .white
         self.directionButton.layer.cornerRadius = 0.5 * directionButton.bounds.size.height
-        self.directionButton.layer.borderColor = UIColor.lightGray.cgColor
-        self.directionButton.layer.borderWidth = 0.5
+        self.directionButton.layer.masksToBounds = false
+        self.directionButton.layer.shadowColor = Color.black.cgColor
+        self.directionButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.directionButton.layer.shadowOpacity = 0.3
+        self.directionButton.layer.shadowRadius = CGFloat(4)
+
         
         self.languageButton.setImage(languageIcon, for: .normal)
         self.languageButton.backgroundColor = .white
         self.languageButton.layer.cornerRadius = 0.5 * languageButton.bounds.size.height
-        self.languageButton.layer.borderColor = UIColor.lightGray.cgColor
-        self.languageButton.layer.borderWidth = 0.5
-        
-        
-        
-        let topPadding = headerView.frame.origin.y + headerView.frame.size.height + 20
-        mapwizePlugin.setTopPadding(topPadding)
+        self.languageButton.layer.masksToBounds = false
+        self.languageButton.layer.shadowColor = Color.black.cgColor
+        self.languageButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.languageButton.layer.shadowOpacity = 0.3
+        self.languageButton.layer.shadowRadius = CGFloat(4)
         
         NSLayoutConstraint(item: self.directionButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.mapwizePlugin.followButton,
                            attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0).isActive = true;
@@ -427,8 +457,6 @@ class MapwizeViewController: UIViewController  {
                            attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0).isActive = true;
         NSLayoutConstraint(item: self.universesButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.mapwizePlugin.followButton,
                            attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0).isActive = true;
-        /*NSLayoutConstraint(item: self.bottomSheetVC.placeView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.mapwizePlugin.bottomLayoutView,
-                           attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0).isActive = true;*/
         
         exitVenue()
     }
@@ -482,6 +510,13 @@ class MapwizeViewController: UIViewController  {
             self.mapwizePlugin.refresh(completionHandler: {
                 if self.mapwizePlugin.getVenue() != nil {
                     self.enterVenue()
+                }
+                let filters = MWZApiFilter()
+                MWZApi.getVenuesWith(filters, success: { (venues) in
+                    self.locationProvider.venues = venues
+                    self.locationProvider.checkProviders(location: self.locationProvider.lastLocation)
+                }) { (err) in
+                    print(err ?? "Unknown error")
                 }
             })
             self.openSuccessAccessAlert()
@@ -544,7 +579,7 @@ class MapwizeViewController: UIViewController  {
         self.configureSearchBar()
         if directionMemory != nil && directionMemory!.venueId.elementsEqual(self.currentVenue.identifier) {
             self.setupDirectionUI()
-            self.startDirection(from: directionMemory!.from, to: directionMemory!.to, direction: directionMemory!.direction)
+            self.startDirection(from: directionMemory!.from, to: directionMemory!.to, direction: directionMemory!.direction, fitBounds:false)
         }
         else {
             self.directionMemory = nil
@@ -564,7 +599,24 @@ class MapwizeViewController: UIViewController  {
             closePlaceView()
         }
         self.isInDirection = false
-        self.exitDirectionView()
+        if self.currentSearchMode != nil {
+            self.closeSearch()
+        }
+        else {
+            self.mapwizePlugin.setDirection(nil)
+            for place in promotedPlaces {
+                self.mapwizePlugin.removePromotedPlace(place)
+            }
+            promotedPlaces.removeAll()
+            self.closePlaceView()
+            self.directionFrom = nil
+            self.directionView.fromSearchBar.text = ""
+            self.directionTo = nil
+            self.directionView.toSearchBar.text = ""
+            self.isInDirection = false
+            closeRouteView()
+            setupDefaultUI()
+        }
     }
     
     func getLanguage() -> String {
@@ -579,16 +631,19 @@ class MapwizeViewController: UIViewController  {
     // MARK: - Place Custom
     func select(place: MWZPlace) {
 
-        for place in promotedPlaces {
-            self.mapwizePlugin.removePromotedPlace(place)
-        }
-        promotedPlaces.removeAll()
         
         self.bottomSheetVC.placeView.setupViewFor(place: place, language: getLanguage())
         self.bottomSheetVC.setHtmlContent(content: place.details(forLanguage: getLanguage()))
         self.selectedPlace = place
         self.mapwizePlugin.removeMarkers()
         self.mapwizePlugin.addMarker(on: place)
+        
+        for place in promotedPlaces {
+            self.mapwizePlugin.removePromotedPlace(place)
+        }
+        promotedPlaces.removeAll()
+        
+        
         self.mapwizePlugin.addPromotedPlace(place)
         promotedPlaces.append(place)
         
@@ -667,7 +722,6 @@ class MapwizeViewController: UIViewController  {
                 self.languageButton.isHidden = false
             }
             if self.currentVenue.universes.count > 1 {
-                print("Venue universe > 1")
                 self.universesButton.isHidden = false
                 if self.languageButton.isHidden {
                     let filteredConstraints = self.view.constraints.filter { $0.identifier == "universeLeading" }
@@ -714,7 +768,7 @@ class MapwizeViewController: UIViewController  {
             MWZApi.getDirectionWith(from: from, to: to, isAccessible: self.isPMR, success: { (direction) in
                 if direction != nil {
                     self.directionMemory = (self.currentVenue.identifier, from!, to!, direction!)
-                    self.startDirection(from:from!, to:to!, direction: direction!)
+                    self.startDirection(from:from!, to:to!, direction: direction!, fitBounds:true)
                 }
             }, failure: { (error) in
                 print(error!)
@@ -722,9 +776,14 @@ class MapwizeViewController: UIViewController  {
         }
     }
     
-    func startDirection(from:MWZDirectionPoint, to:MWZDirectionPoint, direction:MWZDirection!) {
+    func startDirection(from:MWZDirectionPoint, to:MWZDirectionPoint, direction:MWZDirection!, fitBounds:Bool!) {
+        let opts = MWZDirectionOptions()
+        if !fitBounds {
+            opts.centerOnStart = false
+            opts.setToStartingFloor = false
+        }
         self.mapwizePlugin.removeMarkers()
-        self.mapwizePlugin.setDirection(direction)
+        self.mapwizePlugin.setDirection(direction, options: opts)
         if let place1 = from as? MWZPlace {
             self.mapwizePlugin.addPromotedPlace(place1)
             self.promotedPlaces.append(place1)
@@ -748,13 +807,14 @@ class MapwizeViewController: UIViewController  {
             }, failure: { (error) in
                 
             })
-            
         }
         else {
             self.directionView.toSearchBar.text = NSLocalizedString("Coordinates", comment: "")
         }
-        self.mapView.setVisibleCoordinateBounds(direction!.bounds, edgePadding: UIEdgeInsetsMake(100, 20, 80, 20), animated: false)
-        self.mapwizePlugin.followUserMode = NONE
+        /*var coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
+        direction.routes[0].path[0].getValue(&coordinate)
+        self.mapView.setCenter(coordinate, zoomLevel: 18, animated: true)
+        self.mapwizePlugin.setFollowUserMode(NONE)*/
         self.openRouteViewWith(direction: direction!)
     }
     
@@ -838,7 +898,7 @@ class MapwizeViewController: UIViewController  {
         
     }
     
-    func hideCredits(sender: UIButton) {
+    @objc func hideCredits(sender: UIButton) {
         if popup != nil {
             popup.removeFromSuperview()
             popup = nil
@@ -881,6 +941,13 @@ extension MapwizeViewController: QrCodeScannerDelegate {
             MWZApi.getAccess(object.accessKey, success: {
                 object.accessKey = nil
                 self.mapwizePlugin.refresh(completionHandler: {
+                    let filters = MWZApiFilter()
+                    MWZApi.getVenuesWith(filters, success: { (venues) in
+                        self.locationProvider.venues = venues
+                        self.locationProvider.checkProviders(location: self.locationProvider.lastLocation)
+                    }) { (err) in
+                        print(err ?? "Unknown error")
+                    }
                     self.handleParsedObject(object: object)
                 })
             }, failure: { (error) in
@@ -989,6 +1056,7 @@ extension MapwizeViewController: DirectionViewDelegate {
             self.closeSearch()
         }
         else {
+            directionMemory = nil
             self.mapwizePlugin.setDirection(nil)
             for place in promotedPlaces {
                 self.mapwizePlugin.removePromotedPlace(place)
@@ -1076,12 +1144,50 @@ extension MapwizeViewController: UITableViewDelegate {
     }
 }
 
+extension MapwizeViewController: ILIndoorLocationProviderDelegate {
+    func provider(_ provider: ILIndoorLocationProvider!, didFailWithError error: Error!) {
+        
+    }
+    
+    func providerDidStart(_ provider: ILIndoorLocationProvider!) {
+        
+    }
+    
+    func providerDidStop(_ provider: ILIndoorLocationProvider!) {
+        
+    }
+    
+    func provider(_ provider: ILIndoorLocationProvider!, didUpdate location: ILIndoorLocation!) {
+        if lastLocation == nil && !startedFromUrl {
+            lastLocation = location
+            let camera = MGLMapCamera()
+            camera.centerCoordinate = CLLocationCoordinate2DMake(lastLocation!.latitude, lastLocation!.longitude)
+            camera.altitude = 1200
+            if lastLocation!.floor != nil {
+                mapwizePlugin.setFloor(locationProvider.lastLocation!.floor!)
+            }
+            mapView.fly(to: camera, withDuration: 2) {
+                
+            }
+        }
+    }
+    
+}
+
 // MARK: - Mapwize delegate
 extension MapwizeViewController: MWZMapwizePluginDelegate {
     func mapwizePluginDidLoad(_ mapwizePlugin: MapwizePlugin!) {
-        locationProvider = MapwizeLocationProvider()
+        locationProvider.addDelegate(self)
         self.mapwizePlugin.setIndoorLocationProvider(locationProvider)
         self.mapwizePlugin.setPreferredLanguage(Locale.preferredLanguages[0])
+        
+        setupDefaultUI()
+        
+        if (parseObjectFromDeepLink != nil) {
+            startedFromUrl = true
+            self.handleParsedObject(object: parseObjectFromDeepLink)
+        }
+        
     }
     
     // MARK: - Venues
@@ -1103,6 +1209,20 @@ extension MapwizeViewController: MWZMapwizePluginDelegate {
     
     func plugin(_ plugin: MapwizePlugin!, didExitVenue venue: MWZVenue!) {
         self.exitVenue()
+        
+    }
+    
+    func plugin(_ plugin: MapwizePlugin!, didChange followUserMode: FollowUserMode) {
+        if (followUserMode == FOLLOW_USER) {
+            let camera = mapView.camera
+            camera.pitch = 0.0
+            mapView.setCamera(camera, animated: false)
+        }
+        if (followUserMode == FOLLOW_USER_AND_HEADING) {
+            let camera = mapView.camera
+            camera.pitch = 45.0
+            mapView.setCamera(camera, animated: false)
+        }
     }
 
     // MARK: - Place
@@ -1117,7 +1237,7 @@ extension MapwizeViewController: MWZMapwizePluginDelegate {
             self.revealLeftMenu()
         }
         
-        if !self.isInDirection {
+        if !self.isInDirection && selectedPlace != nil {
             closePlaceView()
         }
         if self.currentSearchMode != nil {

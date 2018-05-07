@@ -1,9 +1,10 @@
 import UIKit
-
+import MapwizeForMapbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var mapviewController:MapwizeViewController?
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -11,6 +12,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let reveal = self.window?.rootViewController as? SWRevealViewController
+        if let navigation = reveal?.frontViewController as? UINavigationController {
+            for viewController in navigation.childViewControllers {
+                if viewController.isKind(of: MapwizeViewController.self) {
+                    mapviewController = viewController as? MapwizeViewController
+                }
+            }
+        }
+        MWZApi.getParsedUrlObject(url.absoluteString, success: { (object) in
+            if (self.mapviewController?.mapwizePlugin != nil) {
+                self.mapviewController?.backFromCamera(url:url.absoluteString)
+            }
+            self.mapviewController?.parseObjectFromDeepLink = object
+        }) { (error) in
+            print(error ?? "Unknown issue")
+        }
+        
+        return true
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
