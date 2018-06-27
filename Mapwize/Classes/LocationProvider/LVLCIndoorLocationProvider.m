@@ -30,7 +30,7 @@
     _beaconsFromServerAvailable = false;
     dispatch_async([self getBackgroundQueue], ^{
         NSError * error =nil;
-        NSURL *url = [NSURL URLWithString:@"https://api.mapwize.io/v1/beacons?api_key=e2af1248a493cd196fe54b1dbdba8ba8&venueId=5a8b1432c0b1600013546407"];
+        NSURL *url = [NSURL URLWithString:@"https://api.mapwize.io/v1/beacons?api_key=49036d2ce04575909ccc816bcec837ca&venueId=5b16841d7892d00013395c5f"];
         NSData *data = [NSData dataWithContentsOfURL:url];
         id beacons = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         // Init tables and loop variable to create the map:
