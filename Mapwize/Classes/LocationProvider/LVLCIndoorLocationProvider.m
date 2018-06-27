@@ -6,8 +6,8 @@
 //  Copyright © 2018 Etienne Mercier. All rights reserved.
 //
 #import "LVLCIndoorLocationProvider.h"
-#import <libvlc/VLCCallbackDelegate.h>
-#import <libvlc/VLCSequencer.hpp>
+#import <CoreLightCom/VLCCallbackDelegate.h>
+#import <CoreLightCom/VLCSequencer.hpp>
 
 #define TimeStamp [[NSDate date] timeIntervalSince1970]
 

@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
+  - CoreLightCom (1.0.2):
+    - CoreLightCom/CoreLightCom (= 1.0.2)
+  - CoreLightCom/CoreLightCom (1.0.2)
   - GPSIndoorLocationProvider (1.0.2):
     - IndoorLocation (~> 1.0)
   - IndoorLocation (1.0.3)
@@ -27,6 +30,7 @@ PODS:
   - MTBBarcodeScanner (5.0.3)
 
 DEPENDENCIES:
+  - CoreLightCom (~> 1.0.2)
   - GPSIndoorLocationProvider
   - ionicons
   - Kingfisher
@@ -35,6 +39,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  CoreLightCom: 5b9284ee69579d807a69686b2a156863e990647b
   GPSIndoorLocationProvider: cfec9cdef6a743822e5f8bacdf19ef60360a5c83
   IndoorLocation: 077b1453d425e2d91b29f497b116d09defeb9b15
   ionicons: 630bcd2c2970741c3359e3a35ad544e71d3c086b
@@ -43,6 +48,6 @@ SPEC CHECKSUMS:
   MapwizeForMapbox: daf4527bf24ac66b04aac4add99566bca7ae02f8
   MTBBarcodeScanner: 3ce0f1b0085ef00c726ded663c490a63b29c9aa5
 
-PODFILE CHECKSUM: a224a2bc5239de816fcddb549e1521db3bec0d7c
+PODFILE CHECKSUM: d01981251838c4209cfdaa193ce9f749664c36c6
 
 COCOAPODS: 1.4.0

@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
-	<string>"Can we access your camera in order to scan barcodes?"</string>
+	<string>&quot;Can we access your camera in order to scan barcodes?&quot;</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MGLMapboxAccessToken</key>
@@ -31,7 +31,7 @@
 	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
 	<true/>
 	<key>MWZMapwizeApiKey</key>
-	<string>011d1d9b26c8f034cd9c9d76637a75c3</string>
+	<string>49036d2ce04575909ccc816bcec837ca</string>
 	<key>NSCameraUsageDescription</key>
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
