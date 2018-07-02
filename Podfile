@@ -1,10 +1,12 @@
-source 'https://gitlab.com/Lucibel/public/LucibelSpec.git'
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitlab.com/Lucibel/public/LucibelSpec.git'
+
 platform :ios, '8.0'
 
 target 'Mapwize' do
     use_frameworks!
-    pod 'MapwizeForMapbox', '1.0.3'
+    pod 'Mapbox-iOS-SDK', '~> 3.7'
+    pod 'MapwizeForMapbox', '1.0.5'
     pod 'GPSIndoorLocationProvider'
     pod 'ionicons'
     pod 'Kingfisher'
