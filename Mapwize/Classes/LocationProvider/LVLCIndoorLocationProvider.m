@@ -30,7 +30,7 @@
     _beaconsFromServerAvailable = false;
     dispatch_async([self getBackgroundQueue], ^{
         NSError * error =nil;
-        NSURL *url = [NSURL URLWithString:@"https://api.mapwize.io/v1/beacons?api_key=49036d2ce04575909ccc816bcec837ca&venueId=5b16841d7892d00013395c5f"];
+        NSURL *url = [NSURL URLWithString:@"https://api.mapwize.io/v1/beacons?api_key=e2af1248a493cd196fe54b1dbdba8ba8&venueId=5a8b1432c0b1600013546407"];
         NSData *data = [NSData dataWithContentsOfURL:url];
         id beacons = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         // Init tables and loop variable to create the map:
@@ -80,7 +80,7 @@
     for (id aVLCID in self.vlcTable) {
         if([aVLCID hasPrefix:[vlcid substringToIndex:4]]){
             ILIndoorLocation * location=[self.vlcTable valueForKey:aVLCID];
-            NSLog(@"VLC-ID\t%@  ,\naltitude:\t%f",aVLCID,[(ILIndoorLocation *)[self.vlcTable valueForKey:aVLCID]  latitude]);
+            //NSLog(@"VLC-ID\t%@  ,\naltitude:\t%f",aVLCID,[(ILIndoorLocation *)[self.vlcTable valueForKey:aVLCID]  latitude]);
             return location ;
         }
     }
