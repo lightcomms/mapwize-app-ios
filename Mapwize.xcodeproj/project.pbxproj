@@ -689,7 +689,7 @@
 				);
 				INFOPLIST_FILE = "Mapwize/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.lucibel.mapwize.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lucibel.mapwize.mapping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d8c15200-e720-48db-b4a7-b310a647dd6d";
 				PROVISIONING_PROFILE_SPECIFIER = "XM Development";
@@ -718,7 +718,7 @@
 				INFOPLIST_FILE = "Mapwize/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = io.lucibel.mapwize.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lucibel.mapwize.mapping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "aaec0897-57e7-40a0-8791-3f77b1f92577";
 				PROVISIONING_PROFILE_SPECIFIER = AllNovDev;
