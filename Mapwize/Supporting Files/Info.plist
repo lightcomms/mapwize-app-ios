@@ -33,7 +33,7 @@
 	<key>MWZMapwizeApiKey</key>
 	<string>e2af1248a493cd196fe54b1dbdba8ba8</string>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>LocalIndoorLocation need Camera Permission</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UIAppFonts</key>

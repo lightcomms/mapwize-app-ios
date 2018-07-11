@@ -28,6 +28,7 @@
 		47A44CC21F8501AE0062D187 /* RouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A44CC01F84E6060062D187 /* RouteView.xib */; };
 		47A44CC31F8501B50062D187 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A44CC11F84E6060062D187 /* RouteView.swift */; };
 		8647429B20455AF300B068AD /* LVLCIndoorLocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8647429920455AF300B068AD /* LVLCIndoorLocationProvider.m */; };
+		86C6CE4020F5F59200F84D4A /* LVLCLocation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86C6CE3F20F5F59200F84D4A /* LVLCLocation.plist */; };
 		8F0A2E8E1FBECE7A004B47A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A2E901FBECE7A004B47A1 /* Localizable.strings */; };
 		8F0A2E961FBEDA9E004B47A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A2E981FBEDA9E004B47A1 /* InfoPlist.strings */; };
 		8F15B40A1FB4781C00E09239 /* PlaceWithSubtitleSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F15B4091FB4781C00E09239 /* PlaceWithSubtitleSearchBarCell.swift */; };
@@ -39,7 +40,6 @@
 		8F76A9581FD844D1003A4E3E /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 8F76A9571FD844D1003A4E3E /* credits.html */; };
 		8FA143B81FE958670017D303 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA143B71FE958670017D303 /* BottomSheetViewController.swift */; };
 		8FD757361FC8583E000EEC57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD757351FC8583E000EEC57 /* Assets.xcassets */; };
-		8FE17EF51FBEDCF1001CE300 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FE17EF41FBEDCF1001CE300 /* Info.plist */; };
 		8FE17EF71FBF1199001CE300 /* LocationBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE17EF61FBF1199001CE300 /* LocationBarCell.xib */; };
 		8FE17EF91FBF11A6001CE300 /* LocationBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE17EF81FBF11A6001CE300 /* LocationBarCell.swift */; };
 		8FF5CD151FB3114700B68A92 /* PlaceSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5CD141FB3114700B68A92 /* PlaceSearchBarCell.swift */; };
@@ -85,6 +85,7 @@
 		557F96D39111149B5F87C62C /* Pods_Mapwize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapwize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8647429920455AF300B068AD /* LVLCIndoorLocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVLCIndoorLocationProvider.m; sourceTree = "<group>"; };
 		8647429A20455AF300B068AD /* LVLCIndoorLocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVLCIndoorLocationProvider.h; sourceTree = "<group>"; };
+		86C6CE3F20F5F59200F84D4A /* LVLCLocation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LVLCLocation.plist; sourceTree = "<group>"; };
 		8F0A2E911FBECEC1004B47A1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F0A2E921FBED759004B47A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F0A2E931FBED789004B47A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				8FE17EF41FBEDCF1001CE300 /* Info.plist */,
+				86C6CE3F20F5F59200F84D4A /* LVLCLocation.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -356,7 +358,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = MapWize;
 				TargetAttributes = {
 					47D9943F1F7D35F800E14A6B = {
@@ -392,13 +394,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FE17EF51FBEDCF1001CE300 /* Info.plist in Resources */,
 				47A11A201F84E1AE00B35B34 /* FontAwesome.ttf in Resources */,
 				47A11A211F84E1AE00B35B34 /* ionicons.ttf in Resources */,
 				8F0A2E8E1FBECE7A004B47A1 /* Localizable.strings in Resources */,
 				8FE17EF71FBF1199001CE300 /* LocationBarCell.xib in Resources */,
 				8F0A2E961FBEDA9E004B47A1 /* InfoPlist.strings in Resources */,
 				473928BD1F7FCA150035B311 /* LaunchScreen.storyboard in Resources */,
+				86C6CE4020F5F59200F84D4A /* LVLCLocation.plist in Resources */,
 				47A0B0361F828BD700A40C2A /* SearchBarCell.xib in Resources */,
 				8FD757361FC8583E000EEC57 /* Assets.xcassets in Resources */,
 				47A44CC21F8501AE0062D187 /* RouteView.xib in Resources */,
@@ -571,6 +573,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -578,6 +581,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -589,6 +593,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -629,6 +634,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -636,6 +642,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -647,6 +654,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -669,7 +677,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDD7587ABBCC15C67B1E41B4 /* Pods-Mapwize.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
@@ -698,7 +705,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2777020397A9F17E91CC2364 /* Pods-Mapwize.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";

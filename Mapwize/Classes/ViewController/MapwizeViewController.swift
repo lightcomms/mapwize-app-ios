@@ -66,7 +66,7 @@ class MapwizeViewController: UIViewController  {
     
     var directionMemory:(venueId:String, from:MWZDirectionPoint, to:MWZDirectionPoint, direction:MWZDirection)?
     
-    var locationProvider:LVLCIndoorLocationProvider!
+    var locationProvider:MapwizeLocationProvider!
     
     var defaultBottomMargin:CGFloat = 0.0
     var defaultTopMargin:CGFloat = 0.0
@@ -397,7 +397,9 @@ class MapwizeViewController: UIViewController  {
     }
     
     func initMap() {
-        var options = MWZOptions()
+        // Init the map at the coordinate of the customer
+        let options = MWZOptions()
+        options.floor=0
         self.mapwizePlugin = MapwizePlugin.init(self.mapView, options: options)
         self.mapwizePlugin.delegate = self
         self.mapwizePlugin.setBottomPadding(defaultBottomMargin + 60)
@@ -898,9 +900,9 @@ extension MapwizeViewController: QrCodeScannerDelegate {
             })
         }
         else {
-            if object.indoorLocation != nil {
+            /*if object.indoorLocation != nil {
                 self.locationProvider.define(object.indoorLocation)
-            }
+            }*/
             
             if object.universe != nil {
                 self.mapwizePlugin.setUniverse(object.universe, for: nil)
@@ -1089,8 +1091,16 @@ extension MapwizeViewController: UITableViewDelegate {
 // MARK: - Mapwize delegate
 extension MapwizeViewController: MWZMapwizePluginDelegate {
     func mapwizePluginDidLoad(_ mapwizePlugin: MapwizePlugin!) {
-        locationProvider = LVLCIndoorLocationProvider()
+        locationProvider = MapwizeLocationProvider()
+        self.mapView.setCenter(
+            CLLocationCoordinate2DMake(
+                CLLocationDegrees(locationProvider.getCenterLat()),
+                locationProvider.getCenterLng()),
+            zoomLevel: Double(locationProvider.getCenterZoom()),
+            animated: true)
+        self.mapwizePlugin.setFloor(locationProvider.getFloor())
         self.mapwizePlugin.setIndoorLocationProvider(locationProvider)
+        self.locationProvider.addDelegate(self)
         self.mapwizePlugin.setPreferredLanguage(Locale.preferredLanguages[0])
     }
     
@@ -1138,5 +1148,32 @@ extension MapwizeViewController: MWZMapwizePluginDelegate {
     func plugin(_ plugin: MapwizePlugin!, didChangeFloor floor: NSNumber!) {
 
     }
-}
 
+}
+extension MapwizeViewController: ILIndoorLocationProviderDelegate{
+    func provider(_ provider: ILIndoorLocationProvider!, didUpdate location: ILIndoorLocation!) {
+        if(self.mapwizePlugin.followUserMode==NONE){
+            self.mapwizePlugin.setFloor(location.floor)
+            self.mapwizePlugin.centerOnUser()
+            self.mapwizePlugin.followButton.setMode(FOLLOW_USER)
+        }else if(self.mapwizePlugin.followUserMode==FOLLOW_USER_AND_HEADING){
+            self.mapwizePlugin.setFloor(location.floor)
+            self.mapwizePlugin.centerOnUser()
+            self.mapwizePlugin.followButton.setMode(FOLLOW_USER_AND_HEADING)
+        }
+        
+    }
+    
+    func provider(_ provider: ILIndoorLocationProvider!, didFailWithError error: Error!) {
+        //
+    }
+    
+    func providerDidStart(_ provider: ILIndoorLocationProvider!) {
+        //
+    }
+    
+    func providerDidStop(_ provider: ILIndoorLocationProvider!) {
+        //
+    }
+    
+}

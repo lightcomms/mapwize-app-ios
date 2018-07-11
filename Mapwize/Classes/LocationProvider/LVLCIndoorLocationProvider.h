@@ -10,5 +10,8 @@
 
 @interface LVLCIndoorLocationProvider : ILIndoorLocationProvider
 -(void)defineLocation:(ILIndoorLocation*) location;
-
+@property (readonly) double lat;
+@property (readonly) double lng;
+@property (readonly) NSNumber *floor;
+@property (readonly) double zoom;
 @end

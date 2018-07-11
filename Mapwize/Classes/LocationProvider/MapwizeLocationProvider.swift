@@ -7,7 +7,8 @@ class MapwizeLocationProvider: ILIndoorLocationProvider {
     let maxLockedTime:TimeInterval = 120
     
     var timer:Timer?
-    var gpsProvider:ILGPSIndoorLocationProvider!
+    var vlcLocationProvider:LVLCIndoorLocationProvider!
+    //var gpsProvider:ILGPSIndoorLocationProvider!
     var started = false
     var locationLocked = false;
     
@@ -15,8 +16,10 @@ class MapwizeLocationProvider: ILIndoorLocationProvider {
         super.init()
         self.delegates = []
         
-        gpsProvider = ILGPSIndoorLocationProvider()
-        gpsProvider.addDelegate(self)
+        vlcLocationProvider = LVLCIndoorLocationProvider()
+        vlcLocationProvider.addDelegate(self)
+        /*gpsProvider = ILGPSIndoorLocationProvider()
+        gpsProvider.addDelegate(self)*/
     }
     
     override func supportsFloor() -> Bool {
@@ -25,14 +28,16 @@ class MapwizeLocationProvider: ILIndoorLocationProvider {
     
     override func start() {
         if !started {
-            gpsProvider.start()
+            vlcLocationProvider.start()
+            //gpsProvider.start()
             started = true
         }
     }
     
     override func stop() {
         if started {
-            gpsProvider?.stop()
+            vlcLocationProvider.stop()
+            //gpsProvider?.stop()
             started = false
         }
     }
@@ -41,21 +46,36 @@ class MapwizeLocationProvider: ILIndoorLocationProvider {
         return started
     }
     
-    func defineLocation(location:ILIndoorLocation) {
+    /*func defineLocation(location:ILIndoorLocation) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: maxLockedTime, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
         locationLocked = true
         
         self.dispatchDidUpdate(location)
         
-        /*for delegate in self.delegates {
+        for delegate in self.delegates {
             let castedDelegate = delegate as? ILIndoorLocationProviderDelegate
             castedDelegate?.didLocationChange(location)
-        }*/
-    }
+        }
+    }*/
     
     @objc func tick() {
         locationLocked = false
+    }
+    
+    func getCenterLat() -> Double {
+        return vlcLocationProvider.lat
+    }
+    
+    func getCenterLng() -> Double {
+        return vlcLocationProvider.lng
+    }
+    
+    func getCenterZoom() -> Double {
+        return vlcLocationProvider.zoom
+    }
+    func getFloor() -> NSNumber {
+        return vlcLocationProvider.floor
     }
 }
 

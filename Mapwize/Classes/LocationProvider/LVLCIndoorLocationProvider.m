@@ -20,6 +20,15 @@
 @property (atomic,strong,readwrite) NSDictionary* vlcTable;
 @property (atomic,strong) NSTimer * timer;
 @property (atomic) BOOL locationLocked;
+
+// LVLCLocation property list
+@property (strong, nonatomic) NSString *venueID;
+@property (nonatomic) double lat;
+@property (nonatomic) double lng;
+@property (strong ,nonatomic,readwrite) NSNumber * floor;
+@property (nonatomic) double zoom;
+@property (strong, nonatomic) NSString *api_key;
+
 @end
 
 @implementation LVLCIndoorLocationProvider
@@ -27,10 +36,20 @@
 -(instancetype)init{
     self =[super init];
     self.lastIndoorLocation=[[ILIndoorLocation alloc]init];
+    //Load Dictionary with wood name cross refference values for image name
+    NSString *plistVLCPath = [[NSBundle mainBundle] pathForResource:@"LVLCLocation" ofType:@"plist"];
+    NSDictionary *properties = [[NSDictionary alloc] initWithContentsOfFile:plistVLCPath];
+    // retrieve the values from the plist dict
+    self.venueID = properties[@"LVLCLocationVenueID"];
+    self.lat     = [properties[@"LVLCLocationLat"] doubleValue];
+    self.lng     = [properties[@"LVLCLocationLng"] doubleValue];
+    self.floor   = properties[@"LVLCLocationFloor"];
+    self.zoom    = [properties[@"LVLCLocationZoom"] doubleValue];
+    self.api_key = properties[@"LVLCLocationMPWApiKey"];
     _beaconsFromServerAvailable = false;
     dispatch_async([self getBackgroundQueue], ^{
         NSError * error =nil;
-        NSURL *url = [NSURL URLWithString:@"https://api.mapwize.io/v1/beacons?api_key=e2af1248a493cd196fe54b1dbdba8ba8&venueId=5a8b1432c0b1600013546407"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.mapwize.io/v1/beacons?api_key=%@&venueId=%@",self.api_key, self.venueID ]];
         NSData *data = [NSData dataWithContentsOfURL:url];
         id beacons = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         // Init tables and loop variable to create the map:
