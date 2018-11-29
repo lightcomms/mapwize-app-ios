@@ -19,9 +19,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.1.0</string>
+	<string>3.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>autoStart.2018_11_27</string>
 	<key>LSApplicationCategoryType</key>
 	<string>"Can we access your camera in order to scan barcodes?"</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -31,9 +31,9 @@
 	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
 	<true/>
 	<key>MWZMapwizeApiKey</key>
-	<string>e2af1248a493cd196fe54b1dbdba8ba8</string>
+	<string>49036d2ce04575909ccc816bcec837ca</string>
 	<key>NSCameraUsageDescription</key>
-	<string>LocalIndoorLocation need Camera Permission</string>
+	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UIAppFonts</key>
