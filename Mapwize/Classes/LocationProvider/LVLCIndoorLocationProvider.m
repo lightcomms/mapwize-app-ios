@@ -35,6 +35,7 @@
 
 -(instancetype)init{
     self =[super init];
+    [VLCSequencer setFilter:2];
     self.lastIndoorLocation=[[ILIndoorLocation alloc]init];
     //Load Dictionary with wood name cross refference values for image name
     NSString *plistVLCPath = [[NSBundle mainBundle] pathForResource:@"LVLCLocation" ofType:@"plist"];
@@ -86,7 +87,7 @@
 }
 #pragma mark - start/stop ILLocationProvider implementation
 -(void)start{
-    [VLCSequencer start:[self getBackgroundQueue] withListener:self];
+    [VLCSequencer camback:[self getBackgroundQueue] contextCallback:self];
 }
 
 -(void)stop{

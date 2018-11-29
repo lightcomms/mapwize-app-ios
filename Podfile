@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitlab.com/Lucibel/public/LucibelSpec.git'
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 target 'Mapwize' do
     use_frameworks!
@@ -11,5 +11,5 @@ target 'Mapwize' do
     pod 'ionicons'
     pod 'Kingfisher'
     pod 'MTBBarcodeScanner'
-    pod 'CoreLightCom', '~> 1.0.2'
+    pod 'CoreLightCom', '~> 1.0.4' 
 end
